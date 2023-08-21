@@ -1,0 +1,12 @@
+#password-svg {
+    position: absolute;
+    right: 25px;
+    bottom:  133px ;
+    width:  30px ;
+    height:  25px 
+}
+#password-svg svg{
+    cursor: pointer;
+    height: 25px ;
+    width: 30px 
+}
