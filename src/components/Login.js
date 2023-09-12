@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Input from "./Input";
@@ -8,17 +8,13 @@ import axios from "axios";
 import { useState } from "react";
 import { UserContext } from "../App";
 
-
-
-
 export default function Login() {
-      const [err, seterr] = useState("");
+  const [err, seterr] = useState("");
 
-      const navigate = useNavigate();
+  const navigate = useNavigate();
 
-      const [user, setUser] = useContext(UserContext);
+  const [user, setUser] = useContext(UserContext);
 
-    
   return (
     <div id="loginbody">
       <div id="loginbox">
@@ -40,20 +36,19 @@ export default function Login() {
               .then((response) => {
                 console.log(response);
                 if (response.data === "incorrect username") {
-                    seterr(response.data)
-                }else if (response.data === "incorrect password") {
-                    seterr(response.data)
-                }else{
-                  setUser(response.data)
-                  window.localStorage.setItem("user", JSON.stringify(response.data))
+                  seterr(response.data);
+                } else if (response.data === "incorrect password") {
+                  seterr(response.data);
+                } else {
+                  setUser(response.data[0]);
+                  window.localStorage.setItem("token", response.data[1]);
                   navigate("/");
                 }
-                
               })
               .catch((err) => {
                 console.log(err);
               });
-              
+
             setSubmitting(false);
           }}
         >

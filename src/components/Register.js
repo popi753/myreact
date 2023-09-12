@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Input from "./Input";
@@ -8,17 +8,13 @@ import axios from "axios";
 import { useState } from "react";
 import { UserContext } from "../App";
 
-
-
-
 export default function Register() {
-    const [UniqueError, setUniqueError] = useState(false);
+  const [UniqueError, setUniqueError] = useState(false);
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const [user, setUser] = useContext(UserContext)
+  const [user, setUser] = useContext(UserContext);
 
-    
   return (
     <div id="registerbody">
       <div id="registerbox">
@@ -43,21 +39,19 @@ export default function Register() {
                 username: values["R-username"],
                 password: values["R-password"],
               })
-              .then(
-                (response) => {
-                    console.log(response)
-                  if (response.data === 11000) {
-                    console.log("duplicate")
-                    setUniqueError(true)
-                    setSubmitting(false);
-                  } else {
-                    setUniqueError(false);
-                    setUser(response.data)
-                    window.localStorage.setItem("user", JSON.stringify(response.data))
-                    navigate("/")
+              .then((response) => {
+                console.log(response);
+                if (response.data === 11000) {
+                  console.log("duplicate");
+                  setUniqueError(true);
+                  setSubmitting(false);
+                } else {
+                  setUniqueError(false);
+                  setUser(response.data[0]);
+                  window.localStorage.setItem("token", response.data[1]);
+                  navigate("/");
                 }
-                },
-              )
+              })
               .catch((error) => {
                 console.log(`this is ${error}`);
               });
@@ -79,6 +73,7 @@ export default function Register() {
                 type="text"
                 id="R-username"
                 name="R-username"
+                autoComplete="off"
                 placeholder="enter username"
                 UniqueError={UniqueError}
               />
