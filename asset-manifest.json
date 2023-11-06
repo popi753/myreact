@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/myreact/static/css/main.b5c860c7.css",
-    "main.js": "/myreact/static/js/main.bd97dfbd.js",
+    "main.js": "/myreact/static/js/main.5021154c.js",
     "static/js/787.c20870d0.chunk.js": "/myreact/static/js/787.c20870d0.chunk.js",
     "static/media/karl-paul-baldacchino-SXdIKjRkSDo-unsplash.jpg": "/myreact/static/media/karl-paul-baldacchino-SXdIKjRkSDo-unsplash.dab07201c046c8060634.jpg",
     "static/media/karl-paul-baldacchino-CSZ1Xk0KizQ-unsplash.jpg": "/myreact/static/media/karl-paul-baldacchino-CSZ1Xk0KizQ-unsplash.d37a4ac6ee05ba1a7422.jpg",
     "index.html": "/myreact/index.html",
     "main.b5c860c7.css.map": "/myreact/static/css/main.b5c860c7.css.map",
-    "main.bd97dfbd.js.map": "/myreact/static/js/main.bd97dfbd.js.map",
+    "main.5021154c.js.map": "/myreact/static/js/main.5021154c.js.map",
     "787.c20870d0.chunk.js.map": "/myreact/static/js/787.c20870d0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5c860c7.css",
-    "static/js/main.bd97dfbd.js"
+    "static/js/main.5021154c.js"
   ]
 }
