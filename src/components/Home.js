@@ -21,6 +21,10 @@ export default  function Home(){
             <div>
                 <h1>Welcome {user}</h1>
                 <button onClick={()=>{window.localStorage.removeItem("token"); setUser(null);}}>Logout</button>
+                
+                <Link to="/teams" >
+                            <button>teams</button>
+                </Link>
             </div>
         )
     }
@@ -28,7 +32,7 @@ export default  function Home(){
 
     return(
                 
-                    <div id="auth">
+                    <div id="auth" style={{"display": "flex","flexDirection":"row","justifyContent": "center"}}>
 
                         <Link to="/login"   >
                                 <button>login</button>
@@ -36,6 +40,7 @@ export default  function Home(){
                         <Link to="/register" >
                             <button>register</button>
                         </Link>
+
 
                      </div>
         

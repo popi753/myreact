@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext} from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import Input from "./Input";
+import Input from "../componentsjr/Input";
 import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -29,7 +29,7 @@ export default function Login() {
           })}
           onSubmit={(values, { setSubmitting }) => {
             axios
-              .post("http://localhost:5000/login", {
+              .post(process.env.REACT_APP_API+"/login", {
                 username: values["L-username"],
                 password: values["L-password"],
               })

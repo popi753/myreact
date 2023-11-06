@@ -1,0 +1,115 @@
+
+
+#group{
+    border-radius: 15px;
+    width: 420px;
+    height: 214px;
+    border:2px #0000009c solid;
+    position: relative;
+}
+
+
+
+#insidegroup{
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+
+#chooseteam{    
+    position: absolute;
+    bottom: 0%;
+    opacity: 0;
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+    border: 2px #0000009c solid;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    z-index: 1;
+}
+
+
+
+
+#group:hover .hover{
+    bottom: -25%;
+    -webkit-transition: all 0.8s, -webkit-transform 0.8s;
+    transition: all 0.8s, transform 0.8s;
+    width:100%;
+    height:50px;
+    opacity:1;
+}
+
+#group:not(:hover) .nothover{
+    bottom: 0%;
+    -webkit-transition: all 0.5s, -webkit-transform 0.5s;
+    transition: all 0.5s, transform 0.5s;
+    width:100%;
+    height:50px;
+    opacity:0;
+}
+
+.span:first-child{
+    margin: auto 10px 10px 0px;
+}
+
+
+.teams{
+    padding: 0px 0px 3px 10px ;
+    border-radius: 10px;
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    color:black;
+    font-size: 20px;
+    border-bottom: 1px black solid;
+}
+.teams span:hover{
+    text-decoration: underline; 
+}
+.teams span{
+    cursor: pointer;
+    margin-left: 10px;    
+}
+
+
+
+
+#chooseteam div{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+}
+
+#chooseteam .img-container:hover{
+    -webkit-transition: all 0.8s, -webkit-transform 0.8s;
+    transition: all 0.2s, transform 0.8s;
+    background-color: #dbdde9;
+}
+
+.img-container-clicked{
+    background-color: #808080c2;
+}
+
+
+h3{
+
+    display: inline-block;
+    position: relative;
+    left: 160px;
+}

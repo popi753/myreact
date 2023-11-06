@@ -6,12 +6,9 @@ import Login from "./components/Login";
 import { createContext, useState } from "react";
 import axios from "axios";
 
+import Teams from "./components/Teams";
 
 
-
-
-
-export const UserContext = createContext()
 
 function App() {
 
@@ -20,13 +17,15 @@ function App() {
 
       if (!user) {
         if (window.localStorage.getItem("token")) {
-              axios.post("http://localhost:5000/validate", 
+              axios.post(process.env.REACT_APP_API+"/validate", 
               {},
               {headers:
                    {"Content-Type" :"application/json",
                     "Authorization":window.localStorage.getItem("token")     },
               withCredentials: true},
-              ).then(res=>setUser(res.data)).catch(e=>console.error(e))
+              )
+              .then(res=>setUser(res.data))
+              .catch(e=>console.error(e))
         }
       }
 
@@ -38,6 +37,8 @@ function App() {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/teams" element={<Teams />} />
+                  
               </Routes>  
             </BrowserRouter>
           </UserContext.Provider>
@@ -58,4 +59,8 @@ function App() {
   );
 
 }
+
+export const UserContext = createContext()
+
+
 export default App;

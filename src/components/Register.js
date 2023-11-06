@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import Input from "./Input";
+import Input from "../componentsjr/Input";
 import "../styles/Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -35,7 +35,7 @@ export default function Register() {
           })}
           onSubmit={(values, { setSubmitting }) => {
             axios
-              .post("http://localhost:5000/register", {
+              .post(process.env.REACT_APP_API+"/register", {
                 username: values["R-username"],
                 password: values["R-password"],
               })
