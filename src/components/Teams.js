@@ -216,6 +216,7 @@ export function Grouptable2({list}) {
 }
 
 
+
 export function Chosengroup2({team}) {
   return (
     <div className="teams">
