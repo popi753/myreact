@@ -23,7 +23,7 @@ export default  function Home(){
                 <button onClick={()=>{window.localStorage.removeItem("token"); setUser(null);}}>Logout</button>
                 
                 <Link to="/teams" >
-                            <button>teams</button>
+                            <button>UCL fantazy</button>
                 </Link>
             </div>
         )
